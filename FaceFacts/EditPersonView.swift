@@ -8,11 +8,29 @@
 import SwiftUI
 
 struct EditPersonView: View {
+    @Bindable var person: Person
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            Section {
+                TextField("Name", text: $person.name)
+                    .textContentType(.name)
+                
+                TextField("Email address", text: $person.emailAddress)
+                    .textContentType(.emailAddress)
+                    .textInputAutocapitalization(.never)
+            }
+            
+            Section("Notes") {
+                //axis: .vertical - to specify that this field will grow vertically 
+                TextField("Details about this person", text: $person.details, axis: .vertical)
+            }
+        }
+        .navigationTitle("Edit Person")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-#Preview {
-    EditPersonView()
-}
+//#Preview {
+//    EditPersonView()
+//}

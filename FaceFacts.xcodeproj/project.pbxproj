@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D2788B32C59586B00EF322F /* EditPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2788B22C59586B00EF322F /* EditPersonView.swift */; };
 		0D63777F2C59502000E0A71B /* FaceFactsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63777E2C59502000E0A71B /* FaceFactsApp.swift */; };
 		0D6377812C59502000E0A71B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6377802C59502000E0A71B /* ContentView.swift */; };
 		0D6377832C59502100E0A71B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D6377822C59502100E0A71B /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D2788B22C59586B00EF322F /* EditPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonView.swift; sourceTree = "<group>"; };
 		0D63777B2C59502000E0A71B /* FaceFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D63777E2C59502000E0A71B /* FaceFactsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceFactsApp.swift; sourceTree = "<group>"; };
 		0D6377802C59502000E0A71B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				0D63777E2C59502000E0A71B /* FaceFactsApp.swift */,
 				0D6377802C59502000E0A71B /* ContentView.swift */,
+				0D2788B22C59586B00EF322F /* EditPersonView.swift */,
 				0D63778C2C5950CD00E0A71B /* Person.swift */,
 				0D6377822C59502100E0A71B /* Assets.xcassets */,
 				0D6377842C59502100E0A71B /* Preview Content */,
@@ -143,6 +146,7 @@
 				0D63778D2C5950CD00E0A71B /* Person.swift in Sources */,
 				0D6377812C59502000E0A71B /* ContentView.swift in Sources */,
 				0D63777F2C59502000E0A71B /* FaceFactsApp.swift in Sources */,
+				0D2788B32C59586B00EF322F /* EditPersonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
