@@ -11,6 +11,7 @@
 		0D6377812C59502000E0A71B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6377802C59502000E0A71B /* ContentView.swift */; };
 		0D6377832C59502100E0A71B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D6377822C59502100E0A71B /* Assets.xcassets */; };
 		0D6377862C59502100E0A71B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D6377852C59502100E0A71B /* Preview Assets.xcassets */; };
+		0D63778D2C5950CD00E0A71B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63778C2C5950CD00E0A71B /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		0D6377802C59502000E0A71B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0D6377822C59502100E0A71B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D6377852C59502100E0A71B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0D63778C2C5950CD00E0A71B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				0D63777E2C59502000E0A71B /* FaceFactsApp.swift */,
 				0D6377802C59502000E0A71B /* ContentView.swift */,
+				0D63778C2C5950CD00E0A71B /* Person.swift */,
 				0D6377822C59502100E0A71B /* Assets.xcassets */,
 				0D6377842C59502100E0A71B /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D63778D2C5950CD00E0A71B /* Person.swift in Sources */,
 				0D6377812C59502000E0A71B /* ContentView.swift in Sources */,
 				0D63777F2C59502000E0A71B /* FaceFactsApp.swift in Sources */,
 			);
