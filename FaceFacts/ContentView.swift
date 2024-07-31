@@ -15,18 +15,34 @@ struct ContentView: View {
     //array to keep data for nav stack to use
     @State private var path = [Person]()
     
+    //to specify the sorting order for the list
+    @State private var sortOrder = [SortDescriptor(\Person.name)]
+    
     //var to manage searched text
     @State private var searchText = ""
+    
     
     var body: some View {
         //??
         NavigationStack(path: $path) {
-            PeopleView(searchString: searchText)
+            PeopleView(searchString: searchText, sortOrder: sortOrder)
                 .navigationTitle("FaceFacts")
                 .navigationDestination(for: Person.self) { person in
                     EditPersonView(person: person)
                 }
                 .toolbar {
+                    //dropdown menu for sorting
+                    Menu("Sort", systemImage: "arrow.up.arrow.down") {
+                        //list in the dropdown specified below
+                        Picker("Sort", selection: $sortOrder) {
+                            Text("Name (A-Z)")
+                                .tag([SortDescriptor(\Person.name)])
+                            
+                            Text("Name (Z-A)")
+                                .tag([SortDescriptor(\Person.name, order: .reverse)])
+                        }
+                    }
+                    
                     Button("Add person", systemImage: "plus", action: addPerson)
                 }
                 //to have searchbar abv list

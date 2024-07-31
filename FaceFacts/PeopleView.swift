@@ -29,7 +29,7 @@ struct PeopleView: View {
     
     //to search for searchbar
     //everytime user searches peopleview gets recreated 
-    init(searchString: String = "") {
+    init(searchString: String = "", sortOrder: [SortDescriptor<Person>] = []) {
         //querying the "people" var based on our search string
         //_people - (underscore var name) it says change the query not the array underneath it
         _people = Query(filter: #Predicate { person in
@@ -42,7 +42,7 @@ struct PeopleView: View {
                 || person.emailAddress.localizedStandardContains(searchString)
                 || person.details.localizedStandardContains(searchString)
             }
-        })
+        }, sort: sortOrder)
     }
     
     //fn to delete person
