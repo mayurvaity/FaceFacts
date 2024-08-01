@@ -80,5 +80,6 @@ struct EditPersonView: View {
 }
 
 //#Preview {
-//    EditPersonView()
+//    EditPersonView(person: try! Previewer().person, navigationPath: .constant(NavigationPath()))
+//        .modelContainer(try! Previewer().container)
 //}
