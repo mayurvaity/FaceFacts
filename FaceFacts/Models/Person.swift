@@ -15,6 +15,8 @@ class Person {
     var emailAddress: String
     var details: String
     var metAt: Event?
+    //@Attribute(.externalStorage) - to ask swiftdata to not store this in swiftdata db and store it at an external location
+    @Attribute(.externalStorage) var photo: Data?
     
     init(name: String, emailAddress: String, details: String, metAt: Event? = nil) {
         self.name = name

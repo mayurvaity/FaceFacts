@@ -7,6 +7,7 @@
 
 import SwiftData
 import SwiftUI
+import PhotosUI
 
 struct EditPersonView: View {
     //accessing model context
@@ -15,6 +16,8 @@ struct EditPersonView: View {
     @Bindable var person: Person
     
     @Binding var navigationPath: NavigationPath
+    //var to shows photos
+    @State private var selectedItem: PhotosPickerItem?
     
     //creating query to get events data from swiftdata db,
     //also sorting event data 1st by name and then by location
@@ -25,6 +28,21 @@ struct EditPersonView: View {
     
     var body: some View {
         Form {
+            Section {
+                //if photo Data is avlbl in person obj
+                //and that Data can be converted into a UIImage format then show the image
+                if let imageData = person.photo, let uiImage = UIImage(data: imageData) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFit()
+                }
+                
+                //photo picker in the form
+                PhotosPicker(selection: $selectedItem, matching: .images) {
+                    Label("Select a photo", systemImage: "person")
+                }
+            }
+            
             Section {
                 TextField("Name", text: $person.name)
                     .textContentType(.name)
@@ -66,6 +84,10 @@ struct EditPersonView: View {
             //calling vw to edit this event
             EditEventView(event: event)
         }
+        //when a diffnt photo is selected by photopicker abv, below fn will run to load that photo from storage to here
+        .onChange(of: selectedItem) {
+            loadPhoto()
+        }
     }
     
     //fn to create a new blank event
@@ -76,6 +98,14 @@ struct EditPersonView: View {
         modelContext.insert(event)
         //sending event value with nav path back to the content vw
         navigationPath.append(event)
+    }
+    
+    //to get photo from storage whenever a diffnt photo is selected
+    func loadPhoto() {
+        Task { @MainActor in
+            //to get photo from selectedItem, convert it into Data format and add to the person obj
+            person.photo = try await selectedItem?.loadTransferable(type: Data.self)
+        }
     }
 }
 
