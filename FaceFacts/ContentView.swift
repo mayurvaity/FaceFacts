@@ -13,7 +13,8 @@ struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     
     //array to keep data for nav stack to use
-    @State private var path = [Person]()
+    //using NavigationPath so that any type of obj can be passed and not just person array 
+    @State private var path = NavigationPath()
     
     //to specify the sorting order for the list
     @State private var sortOrder = [SortDescriptor(\Person.name)]
@@ -28,7 +29,8 @@ struct ContentView: View {
             PeopleView(searchString: searchText, sortOrder: sortOrder)
                 .navigationTitle("FaceFacts")
                 .navigationDestination(for: Person.self) { person in
-                    EditPersonView(person: person)
+                    //binding nav path shared with edit person vw to receive any changes in event back 
+                    EditPersonView(person: person, navigationPath: $path)
                 }
                 .toolbar {
                     //dropdown menu for sorting
